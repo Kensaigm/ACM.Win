@@ -35,11 +35,16 @@ namespace ACM.BL
             // Try 2
             decimal result = 0;
 
-            var goalStepCount = Convert.ToDecimal(goalSteps);
+            decimal goalStepCount = 0;
+            decimal.TryParse(goalSteps, out goalStepCount);
+
+            decimal actualStepCount = 0;
+            decimal.TryParse(actualSteps, out actualStepCount);
+
 
             if (goalStepCount > 0)
             {
-                result = (Convert.ToDecimal(actualSteps) / goalStepCount) * 100;
+                result = (actualStepCount / goalStepCount) * 100;
             }
             return result;
             
