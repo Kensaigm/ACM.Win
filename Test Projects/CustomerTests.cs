@@ -58,6 +58,43 @@ namespace ACM.BLTests
 
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CalculatePercentOfGoalStepsTestGoalIsNull()
+        {
+            // Arrange
+            Customer customer = new Customer();
+            string goalSteps = null;
+            string actualSteps = "2000";
+
+            // Act
+            var actual = customer.CalculatePercentOfGoalSteps(goalSteps, actualSteps);
+
+            // Assert
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CalculatePercentOfGoalStepsTestGoalIsNull()
+        {
+            // Arrange
+            Customer customer = new Customer();
+            string goalSteps = null;
+            string actualSteps = "2000";
+
+            // Act
+            var actual = customer.CalculatePercentOfGoalSteps(goalSteps, actualSteps);
+
+            // Assert
+
+        }
+
+        //[TestMethod()]
+        //public void CalculatePercentOfGoalStepsTest()
+        //{
+        //    Assert.Fail();
+        //}
 
     }
 }
