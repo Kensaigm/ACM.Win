@@ -26,5 +26,22 @@ namespace ACM.BL
             // Set stored procedure parameters with the customer data.
             // Call the save stored procedure.
         }
+
+        public Customer Find(string customerID)
+        {
+            Customer result = new Customer();
+
+            return result;
+        }
+
+        public List<Customer> Find(string customerName)
+        {
+            List<Customer> results = new List<Customer>();
+            results.Add(new Customer());
+            results.Add(new Customer());
+            results.Add(new Customer());
+
+            return results;
+        }
     }
 }

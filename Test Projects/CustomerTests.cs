@@ -76,15 +76,24 @@ namespace ACM.BLTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void CalculatePercentOfGoalStepsTestGoalIsNull()
+        public void CalculatePercentOfGoalStepsTestGoalIsNotNumeric()
         {
             // Arrange
             Customer customer = new Customer();
-            string goalSteps = null;
+            string goalSteps = "one";
             string actualSteps = "2000";
 
             // Act
-            var actual = customer.CalculatePercentOfGoalSteps(goalSteps, actualSteps);
+            try
+            {
+                var actual = customer.CalculatePercentOfGoalSteps(goalSteps, actualSteps);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Goal must be numeric", ex.Message);
+                throw;
+            }
+            
 
             // Assert
 
