@@ -20,7 +20,7 @@ namespace ACM.BL
 
 
 
-        public void ValidateEmail()
+        public Boolean ValidateEmail()
         {
             // -- Send an email receipt --
             // If the user requested a receipt
@@ -28,6 +28,30 @@ namespace ACM.BL
             // Ensure a valid email address was provided.
             // If not,
             // request an email address from the user.
+
+            var valid = true;
+
+            if (string.IsNullOrWhiteSpace(this.EmailAddress))
+            {
+                valid = false;
+            }
+
+            var isValidFormat = true;
+            // Code here that validates the format of the email.
+            // using Regular Expressions.
+            if (!isValidFormat == true)
+            {
+                valid = false;
+            }
+
+            var isRealDomain = true;
+            // Code here that confirms whethere domain exists.
+            if(!isRealDomain)
+            {
+                valid = false;
+            }
+
+            return valid;
         }
 
         public object CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)

@@ -40,11 +40,15 @@ namespace ACM.BL
 
             if (emailReceipt)
             {
-                customer.ValidateEmail();
-                customerRepository.Update();
+                var isValid = customer.ValidateEmail();
+                if (isValid)
+                {
+                    customerRepository.Update();
 
-                emailLibrary.SendEmail(customer.EmailAddress,
+                    emailLibrary.SendEmail(customer.EmailAddress,
                                         "Here is your receipt");
+                }
+                
             }
         }
     }
