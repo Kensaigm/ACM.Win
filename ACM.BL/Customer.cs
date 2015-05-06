@@ -20,7 +20,7 @@ namespace ACM.BL
 
 
 
-        public bool ValidateEmail( out string message)
+        public Tuple<bool, string> ValidateEmail()
         {
             // -- Send an email receipt --
             // If the user requested a receipt
@@ -29,38 +29,35 @@ namespace ACM.BL
             // If not,
             // request an email address from the user.
 
-            var valid = true;
+            Tuple<bool, string> result = Tuple.Create(true, "");
 
             if (string.IsNullOrWhiteSpace(this.EmailAddress))
             {
-                valid = false;
-                message = "Email address is null";
+                result = Tuple.Create(false, "Email address is null");
             }
 
-            if (valid)
+            if (result.Item1 == true)
             {
                 var isValidFormat = true;
                 // Code here that validates the format of the email.
                 // using Regular Expressions.
                 if (!isValidFormat == true)
                 {
-                    valid = false;
-                    message = "Email address is not in a correct format";
+                    result = Tuple.Create(false,"Email address is not in a correct format");
                 }
             }
 
-            if (valid)
+            if (result.Item1 == true)
             {
                 var isRealDomain = true;
                 // Code here that confirms whethere domain exists.
                 if (!isRealDomain)
                 {
-                    valid = false;
-                    message = "Email address does not include a valid domain";
+                    result = Tuple.Create(false, "Email address does not include a valid domain");
                 }
             }
 
-            return valid;
+            return result;
         }
 
         public object CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)
