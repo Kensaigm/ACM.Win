@@ -40,8 +40,8 @@ namespace ACM.BL
 
             if (emailReceipt)
             {
-                string message = String.Empty;
-                var isValid = customer.ValidateEmail(ref message);
+                string message;
+                var isValid = customer.ValidateEmail(out message);
                 if (isValid)
                 {
                     customerRepository.Update();

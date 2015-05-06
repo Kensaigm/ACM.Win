@@ -20,7 +20,7 @@ namespace ACM.BL
 
 
 
-        public bool ValidateEmail( ref string message)
+        public bool ValidateEmail( out string message)
         {
             // -- Send an email receipt --
             // If the user requested a receipt
