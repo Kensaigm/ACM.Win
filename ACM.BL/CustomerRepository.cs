@@ -27,12 +27,12 @@ namespace ACM.BL
             // Call the save stored procedure.
         }
 
-        public Customer Find(string customerID)
-        {
-            Customer result = new Customer();
-
-            return result;
-        }
+//        public Customer Find(string customerID)
+//        {
+//            Customer result = new Customer();
+//
+//           return result;
+//        }
 
         public List<Customer> Find(string customerName)
         {

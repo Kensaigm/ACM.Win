@@ -8,6 +8,15 @@ namespace ACM.BL
 {
     public class Customer
     {
+        public Customer()
+        {
+
+        }
+
+        public Customer(int customerId)
+        {
+            this.CustomerId = customerId;
+        }
 
         public static int InstanceCount { get; set; }
 
@@ -117,6 +126,23 @@ namespace ACM.BL
         {
             if (goalStepCount <= 0) throw new ArgumentException("Goal must be greater than 0", "goalSteps");
             return Math.Round((actualStepCount / goalStepCount) * 100 ,2);
+        }
+
+        public Customer Retrieve(int customerId)
+        {
+            // Code that retrieves the defined customer
+            return new Customer();
+        }
+
+        public List<Customer> Retrieve()
+        {
+            return new List<Customer>();
+        }
+
+        public bool Save()
+        {
+            // Code that saves the defined customer
+            return true;
         }
 
     }
