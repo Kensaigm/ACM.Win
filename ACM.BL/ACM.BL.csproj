@@ -48,6 +48,7 @@
     <Compile Include="OrderRepository.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="PaymentRepository.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
