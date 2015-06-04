@@ -16,6 +16,7 @@ namespace ACM.BL
         public Customer(int customerId)
         {
             this.CustomerId = customerId;
+            AddressList = new List<Address>();
         }
 
         public static int InstanceCount { get; set; }
