@@ -8,6 +8,14 @@ namespace ACM.BL
 {
     public class CustomerRepository
     {
+
+        private AddressRepository addressRepository { get; set; }
+
+        public CustomerRepository()
+        {
+            addressRepository = new AddressRepository();
+        }
+
         public void Add(Customer customer)
         {
             // -- If this is a new customer, create the custoemr record --
@@ -53,6 +61,7 @@ namespace ACM.BL
         {
             // Create the instance of the Customer class
             Customer customer = new Customer(customerId);
+            customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).ToList();
 
             // Code that retrieves the defined customer
 
