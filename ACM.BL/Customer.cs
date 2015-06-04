@@ -22,9 +22,7 @@ namespace ACM.BL
 
         private string _lastname;
 
-        public Address WorkAddress { get; set; }
-
-        public Address HomeAddress { get; set; }
+        public List<Address> AddressList { get; set; }
 
         public int CustomerId { get; private set; }
 
