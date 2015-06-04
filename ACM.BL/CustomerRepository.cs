@@ -52,7 +52,7 @@ namespace ACM.BL
         public Customer Retrieve(int customerId)
         {
             // Create the instance of the Customer class
-            Customer customer = new Customer();
+            Customer customer = new Customer(customerId);
 
             // Code that retrieves the defined customer
 
@@ -60,7 +60,7 @@ namespace ACM.BL
             // a populated customer
             if (customerId == 1)
             {
-                customer.CustomerId = 1;
+                // customer.CustomerId = 1;
                 customer.EmailAddress = "fbaggins@hobbiton.me";
                 customer.FirstName = "Frodo";
                 customer.LastName = "Baggins";
