@@ -22,6 +22,10 @@ namespace ACM.BL
 
         private string _lastname;
 
+        public Address WorkAddress { get; set; }
+
+        public Address HomeAddress { get; set; }
+
         public int CustomerId { get; private set; }
 
         public string EmailAddress { get; set; }
