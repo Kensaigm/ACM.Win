@@ -43,5 +43,50 @@ namespace ACM.BL
 
             return results;
         }
+
+        /// <summary>
+        /// Retrieve one customer.
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns></returns>
+        public Customer Retrieve(int customerId)
+        {
+            // Create the instance of the Customer class
+            Customer customer = new Customer();
+
+            // Code that retrieves the defined customer
+
+            // Temporary hard coded values to return
+            // a populated customer
+            if (customerId == 1)
+            {
+                customer.CustomerId = 1;
+                customer.EmailAddress = "fbaggins@hobbiton.me";
+                customer.FirstName = "Frodo";
+                customer.LastName = "Baggins";
+            }
+
+            return customer;
+        }
+
+        /// <summary>
+        /// Retrieves all customers.
+        /// </summary>
+        /// <returns></returns>
+        public List<Customer> Retrieve()
+        {
+            return new List<Customer>();
+        }
+
+        /// <summary>
+        /// Saves the current customer
+        /// </summary>
+        /// <returns></returns>
+        public bool Save()
+        {
+            // Code that saves the defined customer
+            return true;
+        }
+
     }
 }

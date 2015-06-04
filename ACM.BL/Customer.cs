@@ -22,7 +22,7 @@ namespace ACM.BL
 
         private string _lastname;
 
-        public int CustomerId { get; set; }
+        public int CustomerId { get; private set; }
 
         public string EmailAddress { get; set; }
 
@@ -128,22 +128,35 @@ namespace ACM.BL
             return Math.Round((actualStepCount / goalStepCount) * 100 ,2);
         }
 
-        public Customer Retrieve(int customerId)
-        {
-            // Code that retrieves the defined customer
-            return new Customer();
-        }
+        ///// <summary>
+        ///// Retrieve one customer.
+        ///// </summary>
+        ///// <param name="customerId"></param>
+        ///// <returns></returns>
+        //public Customer Retrieve(int customerId)
+        //{
+        //    // Code that retrieves the defined customer
+        //    return new Customer();
+        //}
 
-        public List<Customer> Retrieve()
-        {
-            return new List<Customer>();
-        }
+        ///// <summary>
+        ///// Retrieves all customers.
+        ///// </summary>
+        ///// <returns></returns>
+        //public List<Customer> Retrieve()
+        //{
+        //    return new List<Customer>();
+        //}
 
-        public bool Save()
-        {
-            // Code that saves the defined customer
-            return true;
-        }
+        ///// <summary>
+        ///// Saves the current customer
+        ///// </summary>
+        ///// <returns></returns>
+        //public bool Save()
+        //{
+        //    // Code that saves the defined customer
+        //    return true;
+        //}
 
     }
 }
