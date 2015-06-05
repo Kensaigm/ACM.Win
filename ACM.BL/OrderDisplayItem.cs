@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    class OrderDisplayItem
+    public class OrderDisplayItem
     {
+        public int OrderItemId { get; private set; }
+        public int OrderQantity { get; set; }
+        public string ProductName { get; set; }
+        public decimal? PurchasePrice { get; set; }
     }
 }
