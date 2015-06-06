@@ -77,7 +77,7 @@ namespace ACM.BL
                 {
                     ProductName = "Sunflowers",
                     PurchasePrice = 15.96M,
-                    OrderQuantity = 1
+                    OrderQuantity = 2
                 };
                 orderDisplay.orderDisplayItemList.Add(orderDisplayItem);
 

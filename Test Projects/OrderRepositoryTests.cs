@@ -35,7 +35,7 @@ namespace ACM.BLTests
                 {
                     new OrderDisplayItem()
                     {
-                        OrderQuantity = 1,
+                        OrderQuantity = 2,
                         ProductName = "Sunflowers",
                         PurchasePrice = 15.96M
                     },
