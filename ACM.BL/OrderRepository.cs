@@ -37,7 +37,7 @@ namespace ACM.BL
             // a populated order
             if (orderId == 10)
             {
-                order.OrderDate = new DateTimeOffset(new DateTime(2015, 06, 3, 18 , 51, 50), new TimeSpan(7, 0, 0));
+                order.OrderDate = new DateTimeOffset(new DateTime(2014, 4, 14, 10 , 00, 00), new TimeSpan(7, 0, 0));
 
             }
 
@@ -77,7 +77,7 @@ namespace ACM.BL
                 {
                     ProductName = "Sunflowers",
                     PurchasePrice = 15.96M,
-                    OrderQantity = 2
+                    OrderQuantity = 1
                 };
                 orderDisplay.orderDisplayItemList.Add(orderDisplayItem);
 
@@ -85,7 +85,7 @@ namespace ACM.BL
                 {
                     ProductName = "Rake",
                     PurchasePrice = 6M,
-                    OrderQantity = 1
+                    OrderQuantity = 1
                 };
                 orderDisplay.orderDisplayItemList.Add(orderDisplayItem);
             }
