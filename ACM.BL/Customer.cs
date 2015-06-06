@@ -24,6 +24,8 @@ namespace ACM.BL
 
         private string _lastname;
 
+        public int CustomerType { get; set; }
+
         public List<Address> AddressList { get; set; }
 
         public int CustomerId { get; private set; }
