@@ -19,6 +19,10 @@ namespace ACM.BL
             // Pass in the request Id
             Product product = new Product(productId);
             // Code that retrieves the defined product
+            Object myObject = new Object();
+
+            Console.WriteLine("Object: " + myObject.ToString());
+            Console.WriteLine("Product: " + product.ToString());
 
             // Temporary hard coded values to return
             // a populated product
