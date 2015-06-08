@@ -134,6 +134,10 @@ namespace ACM.BL
             return Math.Round((actualStepCount / goalStepCount) * 100 ,2);
         }
 
+        public override string ToString()
+        {
+            return FullName;
+        }
         ///// <summary>
         ///// Retrieve one customer.
         ///// </summary>
