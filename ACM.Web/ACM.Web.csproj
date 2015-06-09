@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>c4a35216-47b7-449f-8b6f-cdcc01cb5ddf</ProjectGuid>
+    <ProjectGuid>{9CCEF3D6-B342-4A7B-AF47-944097308203}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ACM.Web</RootNamespace>
