@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Acme.Common
 {
+
+    /// <summary>
+    /// Breaks String up on capital letter adding a space.
+    /// </summary>
     public class StringHandler
     {
         public string InsertSpaces(string source)
@@ -19,6 +23,8 @@ namespace Acme.Common
                 {
                     if (char.IsUpper(letter))
                     {
+                        // Trim any spaces already there
+                        result = result.Trim();
                         result += " ";
                     }
                     result += letter;
