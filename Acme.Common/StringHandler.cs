@@ -11,9 +11,9 @@ namespace Acme.Common
     /// <summary>
     /// Breaks String up on capital letter adding a space.
     /// </summary>
-    public class StringHandler
+    public static class StringHandler
     {
-        public string InsertSpaces(string source)
+        public static string InsertSpaces(string source)
         {
             string result = string.Empty;
 
