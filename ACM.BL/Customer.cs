@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Acme.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    public class Customer : EntityBase
+    public class Customer : EntityBase, ILoggable
     {
         public Customer()
             : this(0)
@@ -63,7 +64,7 @@ namespace ACM.BL
             }
         }
 
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
@@ -145,6 +146,7 @@ namespace ACM.BL
                 this.FullName + " " +
                 "Email: " + this.EmailAddress + " " +
                 "Status: " + this.EntityState.ToString();
+            return logString;
         }
         ///// <summary>
         ///// Retrieve one customer.
