@@ -8,13 +8,13 @@ namespace Core.Common
 {
     public class OperationResult
     {
-        public bool success { get; set; }
+        public bool Success { get; set; }
         public List<string> MessageList { get; private set; }
 
         public OperationResult()
         {
             MessageList = new List<string>();
-            success = true;
+            Success = true;
         }
 
         public void AddMessage(string message)

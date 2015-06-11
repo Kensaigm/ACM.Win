@@ -41,7 +41,7 @@ namespace ACM.BL
             if (emailReceipt)
             {
                 var result = customer.ValidateEmail();
-                if (result.Item1 == true)
+                if (result.Success)
                 {
                     customerRepository.Update();
 

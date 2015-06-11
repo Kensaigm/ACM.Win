@@ -1,4 +1,5 @@
 ﻿using Acme.Common;
+using Core.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,45 +75,81 @@ namespace ACM.BL
             return isValid;
         }
 
-        public Tuple<bool, string> ValidateEmail()
+        public OperationResult ValidateEmail()
         {
-            // -- Send an email receipt --
-            // If the user requested a receipt
-            // Get the customer data
-            // Ensure a valid email address was provided.
-            // If not,
-            // request an email address from the user.
+            var op = new OperationResult();
 
-            Tuple<bool, string> result = Tuple.Create(true, "");
-
-            if (string.IsNullOrWhiteSpace(this.EmailAddress))
+            if (string .IsNullOrWhiteSpace(this.EmailAddress))
             {
-                result = Tuple.Create(false, "Email address is null");
+                op.Success = false;
+                op.AddMessage("Email address is null");
             }
 
-            if (result.Item1 == true)
+            if (op.Success)
             {
                 var isValidFormat = true;
-                // Code here that validates the format of the email.
+                // Code here that validate the format of the email
                 // using Regular Expressions.
-                if (!isValidFormat == true)
+                if(!isValidFormat)
                 {
-                    result = Tuple.Create(false,"Email address is not in a correct format");
+                    op.Success = false;
+                    op.AddMessage("Email address is not in a correct format");
                 }
             }
 
-            if (result.Item1 == true)
+            if (op.Success)
             {
                 var isRealDomain = true;
-                // Code here that confirms whethere domain exists.
+                // Code here that confirms whether domain exists.
                 if (!isRealDomain)
                 {
-                    result = Tuple.Create(false, "Email address does not include a valid domain");
+                    op.Success = false;
+                    op.AddMessage("Email address does not include a valid domain");
                 }
             }
 
-            return result;
+            return op;
         }
+
+        //public Tuple<bool, string> ValidateEmail()
+        //{
+        //    // -- Send an email receipt --
+        //    // If the user requested a receipt
+        //    // Get the customer data
+        //    // Ensure a valid email address was provided.
+        //    // If not,
+        //    // request an email address from the user.
+
+        //    Tuple<bool, string> result = Tuple.Create(true, "");
+
+        //    if (string.IsNullOrWhiteSpace(this.EmailAddress))
+        //    {
+        //        result = Tuple.Create(false, "Email address is null");
+        //    }
+
+        //    if (result.Item1 == true)
+        //    {
+        //        var isValidFormat = true;
+        //        // Code here that validates the format of the email.
+        //        // using Regular Expressions.
+        //        if (!isValidFormat == true)
+        //        {
+        //            result = Tuple.Create(false,"Email address is not in a correct format");
+        //        }
+        //    }
+
+        //    if (result.Item1 == true)
+        //    {
+        //        var isRealDomain = true;
+        //        // Code here that confirms whethere domain exists.
+        //        if (!isRealDomain)
+        //        {
+        //            result = Tuple.Create(false, "Email address does not include a valid domain");
+        //        }
+        //    }
+
+        //    return result;
+        //}
 
         public object CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)
         {
