@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
+
+    public enum PaymentType
+    {
+        CreditCard = 1,
+        PayPal = 2
+    }
+
     public class Payment
     {
 
         public int PaymentType { get; set; }
-
-        public enum PaymentTypeOption
-        {
-            CreditCard = 1,
-            PayPal = 2
-        }
 
         public void ProcessPayment()
         {
@@ -28,13 +29,13 @@ namespace ACM.BL
             // Open a connection
             // Set stored procedure paramenters with the payment data.
             // Call the save stored procedures.
-            switch ((PaymentTypeOption)this.PaymentType)
+            switch ((PaymentType)this.PaymentType)
             {
-                case PaymentTypeOption.CreditCard:
+                case ACM.BL.PaymentType.CreditCard:
                     // Process credit card
                     break;
 
-                case PaymentTypeOption.PayPal:
+                case ACM.BL.PaymentType.PayPal:
                     // Process PayPal
                     break;
 
