@@ -21,9 +21,6 @@ namespace ACM.Win
         private void button1_Click(object sender, EventArgs e)
         {
             PlaceOrder();
-
-
-
         }
 
         private void PlaceOrder()
@@ -37,15 +34,15 @@ namespace ACM.Win
             // Populate the order instance
 
             // Get value for OrderWin.UI.Form.Order.AllowSplit.Checkbox
-            var allowSplitOrders = true;
+            // var allowSplitOrders = true;
             // Get value for OrderWind.UI.Form.Order.EmailReceipt.Checkbox
-            var emailReceipt = true;
+            // var emailReceipt = true;
 
             var payment = new Payment();
             // Populate the payment info from OrderWin.UI.Form.BillingInfo
 
             var orderController = new OrderController();
-            orderController.PlaceOrder(customer, order, payment, allowSplitOrders, emailReceipt);
+            orderController.PlaceOrder(customer, order, payment, allowSplitOrders:false, emailReceipt:true);
         }
 
     }
