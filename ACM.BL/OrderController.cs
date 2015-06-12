@@ -57,6 +57,10 @@ namespace ACM.BL
                 else
                 {
                     // log the message
+                    if (result.MessageList.Any())
+                    {
+                        op.AddMessage(result.MessageList[0]);
+                    }
                 }
                 
             }
