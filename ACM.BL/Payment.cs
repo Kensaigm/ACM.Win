@@ -21,7 +21,14 @@ namespace ACM.BL
 
         public void ProcessPayment()
         {
-            if (!Enum.IsDefined(typeof(PaymentType), this.PaymentType))
+            PaymentType paymentTypeOption;
+            if (!Enum.TryParse(this.PaymentType.ToString(), out paymentTypeOption))
+            {
+                throw new InvalidEnumArgumentException("Payment type", (int)this.PaymentType, typeof(PaymentType));
+            }
+
+            if (!Enum.TryParse("creditcard", true, out paymentTypeOption) || 
+                !Enum.TryParse("paypal", true, out paymentTypeOption))
             {
                 throw new InvalidEnumArgumentException("Payment type", (int)this.PaymentType, typeof(PaymentType));
             }
@@ -34,7 +41,7 @@ namespace ACM.BL
             // Open a connection
             // Set stored procedure paramenters with the payment data.
             // Call the save stored procedures.
-            switch ((PaymentType)this.PaymentType)
+            switch (paymentTypeOption)
             {
                 case ACM.BL.PaymentType.CreditCard:
                     // Process credit card
