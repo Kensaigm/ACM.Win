@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,10 @@ namespace ACM.BL
 
         public void ProcessPayment()
         {
+            if (!Enum.IsDefined(typeof(PaymentType), this.PaymentType))
+            {
+                throw new InvalidEnumArgumentException("Payment type", (int)this.PaymentType, typeof(PaymentType));
+            }
             // -- Process the payment --
             // If credit card,
             // process the credit card payment.
