@@ -55,6 +55,7 @@
     <Compile Include="CustomerRepositoryTest.cs" />
     <Compile Include="OrderRepositoryTests.cs" />
     <Compile Include="RetrieveTest.cs" />
+    <Compile Include="OrderControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ACM.BL\ACM.BL.csproj">
@@ -64,6 +65,10 @@
     <ProjectReference Include="..\Acme.Common\Acme.Common.csproj">
       <Project>{cffac43f-3713-4fb2-921a-b3aa11ed8f69}</Project>
       <Name>Acme.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Common\Core.Common.csproj">
+      <Project>{6868c0b2-8bbc-4bf8-a5b3-49046fb501bf}</Project>
+      <Name>Core.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
