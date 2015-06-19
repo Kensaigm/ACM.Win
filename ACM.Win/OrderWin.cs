@@ -24,6 +24,8 @@ namespace ACM.Win
             if (button != null)
             {
                 button.Text = "Processing ...";
+                // Exception ex = (Exception)sender;
+                
             }
             PlaceOrder();
         }
@@ -47,8 +49,16 @@ namespace ACM.Win
             // Populate the payment info from OrderWin.UI.Form.BillingInfo
 
             var orderController = new OrderController();
-            orderController.PlaceOrder(customer, order, payment, allowSplitOrders:false, emailReceipt:true);
-        }
 
+            try
+            {
+                var op = orderController.PlaceOrder(customer, order, payment, allowSplitOrders:false, emailReceipt:true);
+            }
+            catch (ArgumentNullException ane)
+            {
+                // Log the issue ane.Message()
+                // Display a message to the user that the order was not successful
+            }
+        }
     }
 }
